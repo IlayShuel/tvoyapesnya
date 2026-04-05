@@ -7,7 +7,9 @@ import { type Order } from '@/types'
 import { Upload, Loader2, CheckCircle2, Music2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const STATUS_OPTIONS = [
+type AdminStatus = 'pending' | 'generating' | 'completed'
+
+const STATUS_OPTIONS: { value: AdminStatus; label: string }[] = [
   { value: 'pending', label: 'Pending' },
   { value: 'generating', label: 'Generating' },
   { value: 'completed', label: 'Completed' },
@@ -17,7 +19,9 @@ export function OrderActions({ order }: { order: Order }) {
   const router = useRouter()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const [status, setStatus] = useState(order.status === 'pending_payment' ? 'pending' : order.status)
+  const [status, setStatus] = useState<AdminStatus>(
+    (order.status === 'pending_payment' ? 'pending' : order.status) as AdminStatus
+  )
   const [file, setFile] = useState<File | null>(null)
   const [notes, setNotes] = useState(order.admin_notes ?? '')
   const [loading, setLoading] = useState(false)
@@ -74,7 +78,7 @@ export function OrderActions({ order }: { order: Order }) {
             <button
               key={opt.value}
               type="button"
-              onClick={() => setStatus(opt.value as Order['status'])}
+              onClick={() => setStatus(opt.value)}
               className={cn(
                 'px-4 py-1.5 rounded-full text-xs font-medium border transition-all',
                 status === opt.value
