@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --rose: #E8826A;
+    --rose-l: #F2A98A;
+    --rose-pale: #FBE8E0;
+    --cream: #FDF6EE;
+    --warm: #F5EDE4;
+    --warm2: #EDD5C0;
+    --brown: #5C3D2E;
+    --brownl: #8B5E4A;
+    --text: #3D2314;
+    --textm: #7A5240;
+    --texts: #A87860;
+    --white: #FFFAF6;
+
+    --background: 36 100% 97%;
+    --foreground: 20 60% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 60% 18%;
+    --primary: 15 72% 66%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 40% 92%;
+    --secondary-foreground: 20 60% 18%;
+    --muted: 30 30% 88%;
+    --muted-foreground: 20 30% 48%;
+    --accent: 30 40% 92%;
+    --accent-foreground: 20 60% 18%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 30% 85%;
+    --input: 25 30% 85%;
+    --ring: 15 72% 66%;
+    --radius: 0.75rem;
+  }
+
+  /* Admin pages use dark theme */
+  .admin-theme {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --primary: 270 91% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 55%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 270 91% 65%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply antialiased; background-color: var(--cream); color: var(--text); font-size: 17px; }
+  ::selection { background: rgba(232, 130, 106, 0.25); color: var(--text); }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Playfair Display', serif; }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--rose), var(--rose-l));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-warm {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(232, 130, 106, 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Dark glass for admin */
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .shadow-rose { box-shadow: 0 5px 22px rgba(232, 130, 106, 0.35); }
+  .shadow-rose-lg { box-shadow: 0 8px 40px rgba(92, 61, 46, 0.12); }
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.6s ease forwards; }
+
+/* Vinyl spin */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+/* Smooth scroll */
+html { scroll-behavior: smooth; }

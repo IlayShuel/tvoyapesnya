@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/user/AppData/Local/Programs//**)",
+      "Read(//c/Program Files//**)",
+      "Read(//c/Users/user/AppData/Roaming//**)",
+      "Bash(\"/c/Users/user/AppData/Local/Programs/Antigravity/bin/node\" --version)",
+      "Bash(cmd.exe /c \"node --version\")",
+      "Bash(cmd.exe /c \"where node\")",
+      "Bash(cmd.exe /c \"node --version && npm --version\")",
+      "Bash(cmd.exe /c \"where node 2>&1 & where npm 2>&1 & where npx 2>&1\")",
+      "Bash(powershell.exe -Command \"Get-Command node -ErrorAction SilentlyContinue | Select-Object Source; Get-Command npm -ErrorAction SilentlyContinue | Select-Object Source; [System.Environment]::GetEnvironmentVariable\\('PATH','Machine'\\) -split ';' | Select-String -Pattern 'node|npm'\")"
+    ]
+  }
+}
