@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
         {
           quantity: 1,
           price_data: {
-            currency: 'rub',
+            currency: 'usd',
             unit_amount: priceInCents,
             product_data: {
               name: song_title,

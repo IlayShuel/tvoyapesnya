@@ -37,8 +37,8 @@ const VOICES: Chip[] = [
 ]
 
 const PACKAGES: Chip[] = [
-  { label: 'Стандарт — ₽990', value: 'standard' },
-  { label: 'Премиум — ₽1490 ⭐', value: 'premium' },
+  { label: 'Стандарт — $29', value: 'standard' },
+  { label: 'Премиум — $49 ⭐', value: 'premium' },
 ]
 
 function ChipGroup({
@@ -130,7 +130,7 @@ export function OrderFormCard() {
 
     const lyrics = `Повод: ${occasion}. Голос: ${voice}.\n${description}`
     const songTitle = `Песня для ${forWhom}`
-    const basePrice = pkg === 'premium' ? 149000 : 99000
+    const basePrice = pkg === 'premium' ? 4900 : 2900
     const discount = parseFloat(localStorage.getItem('coupon_applied') ?? '0')
     const priceInCents = Math.round(basePrice * (1 - discount))
 

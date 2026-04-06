@@ -51,7 +51,7 @@ export function Pricing() {
               Стандарт
             </p>
             <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '3.2rem', fontWeight: 700, color: 'var(--text)', lineHeight: 1, marginBottom: '0.2rem' }}>
-              <span style={{ fontSize: '1.4rem', color: 'var(--rose)' }}>₽</span>990
+              <span style={{ fontSize: '1.4rem', color: 'var(--rose)' }}>$</span>29
             </div>
             <p style={{ fontSize: '0.8rem', color: 'var(--texts)', marginBottom: '1.5rem' }}>Для одного особого момента</p>
             <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.75rem' }}>
@@ -97,7 +97,7 @@ export function Pricing() {
               Премиум
             </p>
             <div style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '3.2rem', fontWeight: 700, color: 'var(--text)', lineHeight: 1, marginBottom: '0.2rem' }}>
-              <span style={{ fontSize: '1.4rem', color: 'var(--rose)' }}>₽</span>1490
+              <span style={{ fontSize: '1.4rem', color: 'var(--rose)' }}>$</span>49
             </div>
             <p style={{ fontSize: '0.8rem', color: 'var(--texts)', marginBottom: '1.5rem' }}>Для незабываемого подарка</p>
             <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.75rem' }}>
